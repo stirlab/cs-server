@@ -7,12 +7,14 @@ The following operations are supported:
  * Hard stop
  * Update CPU and MEM based on configured 'profiles'
  * Get basic server status information (status, CPU, MEM)
+ * Run commands on groups of servers via custom configured groups
+ * Operate on servers in different datacenters
 
 Both a CLI executable and a Node.js library are provided.
 
 ## Installation
 ```
-git clone https://github.com/thehunmonkgroup/cs-server.git
+git clone https://github.com/stirlab/cs-server.git
 cd cs-server
 npm install
 cp config.sample.js config.js
@@ -27,7 +29,7 @@ the various configuration options.
 
 ### CLI
 
-#### For commands on individual servers.
+#### For commands on individual (or groups of configured) servers.
 Run ```cs``` without arguments for script usage.
 
 The CLI executable supports configuring 'groups' in the config file which
