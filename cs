@@ -224,7 +224,10 @@ switch (args[0]) {
         cs.startServerTracked(serverLabel, cb);
       }
     }
-    executeFuncsParallel(groupLabel, startServerFunc);
+    // TODO: Parallel should work, but getting errors from the async module
+    // about callbacks already being called
+    executeFuncsSeries(groupLabel, startServerFunc);
+    //executeFuncsParallel(groupLabel, startServerFunc);
     break;
   case 'shutdown':
     var groupLabel = args[1];
@@ -252,7 +255,10 @@ switch (args[0]) {
         getServerStatus(serverLabel, statusCb);
       }
     }
-    executeFuncsParallel(groupLabel, shutdownServerFunc);
+    // TODO: Parallel should work, but getting errors from the async module
+    // about callbacks already being called
+    executeFuncsSeries(groupLabel, shutdownServerFunc);
+    //executeFuncsParallel(groupLabel, shutdownServerFunc);
     break;
   case 'hard-stop':
     var groupLabel = args[1];
@@ -274,7 +280,10 @@ switch (args[0]) {
         getServerStatus(serverLabel, statusCb);
       }
     }
-    executeFuncsParallel(groupLabel, stopServerFunc);
+    // TODO: Parallel should work, but getting errors from the async module
+    // about callbacks already being called
+    executeFuncsSeries(groupLabel, stopServerFunc);
+    //executeFuncsParallel(groupLabel, stopServerFunc);
     break;
   case 'status':
     var groupLabel = args[1];
