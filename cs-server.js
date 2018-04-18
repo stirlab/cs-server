@@ -372,6 +372,13 @@ CsServer.prototype.updateServer = function(serverLabel, profile, cb) {
         // fetched and stuffed back into the data passed to the server.
         profileData.name = data.name;
         profileData.vnc_password = data.vnc_password;
+
+        // Pass these too, or they get overwritten.
+        profileData.tags = data.tags;
+
+        // Calculate NUMA based on the CPU requested.
+        profileData.enable_numa = profileData.cpu > 16800
+
         request = this.makeEndpoint(config.datacenterId);
         request.put(format("/servers/%s/", config.serverId), profileData, apiCallback)
       }
