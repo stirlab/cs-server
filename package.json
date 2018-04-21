@@ -3,7 +3,7 @@
 , "private": true
 , "keywords": []
 , "homepage" : "https://github.com/thehunmonkgroup/cs-server"
-, "version" : "0.0.4"
+, "version" : "0.0.5"
 , "engines" : { "node" : ">=0.8.0" }
 , "dependencies": {
     "async": "2.5.0"
