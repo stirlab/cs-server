@@ -24,7 +24,7 @@ var config = require('./config');
 var cs = new CsServer(config.cs, config.ssh);
 // Uncomment this to use the mock handlers, with success responses.
 // Actions not included in the array will mock a failure state.
-//cs.useMockHandlers(['start', 'stop', 'update', 'service']);
+//cs.useMockHandlers(['start', 'shutdown', 'stop', 'update', 'service']);
 
 var debugCallback = function(err, data) {
   if (err) {
@@ -301,7 +301,7 @@ switch (args[0]) {
         }
         else {
           results.forEach(function(data) {
-              var info = format("Name: %s\nServer state: %s\nCPU: %d MHz\nRAM: %s\nIP: %s", data.name, data.serverStatus, data.cpu, data.mem, data.ip);
+              var info = format("Name: %s\nServer status: %s\nCPU: %d MHz\nRAM: %s\nIP: %s", data.name, data.serverStatus, data.cpu, data.mem, data.ip);
               log(format("\n\nGot info for server %s\n", data.serverLabel) + info);
           });
         }
