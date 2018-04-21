@@ -9,7 +9,7 @@
     "async": "2.5.0"
     , "hostile": "1.3.0"
     , "simple-ssh": "0.9.0"
-    , "cloudsigma": "git://github.com/stirlab/node-cloudsigma#v0.0.2"
+    , "cloudsigma": "git://github.com/stirlab/node-cloudsigma#v0.0.3"
   }
 , "maintainers" :
   [ { "name": "Chad Phillips"
