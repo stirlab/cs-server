@@ -38,13 +38,13 @@ var CsServer = function(cs, ssh, logger) {
     cb = cb ? cb : dummyCb;
     var postCommand = function(err, res, body) {
       if (err) {
-        self.logger.error(format('%s command returned error: %s, %s', command, err, body));
+        self.logger.error(format('%s command returned error: %s', command, err), body);
         cb(err, body);
       }
       else {
         var stateChangeCallback = function(err, data) {
           if (err) {
-            self.logger.error(format('State change returned error: %s, %s', err, data));
+            self.logger.error(format('State change returned error: %s', err), data);
             cb(err, data);
           }
           else {
