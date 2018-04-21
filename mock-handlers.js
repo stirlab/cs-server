@@ -94,7 +94,7 @@ var Factory = function(logger) {
   }
 
   return {
-    pbHandler: new CsHandler(),
+    csHandler: new CsHandler(),
     sshHandler: SshHandler,
     setSuccessStates: setSuccessStates,
   }
